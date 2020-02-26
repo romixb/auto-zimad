@@ -4,20 +4,20 @@ import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import org.springframework.context.annotation.Configuration;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
 @Configuration
 public class TestConfig {
 
-    @BeforeAll
+    @BeforeSuite
     static void configureRestAssured() {
         RestAssured.baseURI = "https://api.todoist.com/rest";
         RestAssured.filters(new AllureRestAssured(), new RequestLoggingFilter(), new ResponseLoggingFilter());
     }
 
-    @AfterAll
+    @AfterSuite
     static void ResetEnvironment(){
         //ResetEnvironment();
     }
