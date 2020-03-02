@@ -19,7 +19,7 @@ import java.util.UUID;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class RestAssuredSpecs {
 
-    @Value("${api.key}")
+    @Value("${api.key}")    //todo: hide on test execution side
     String x;
 
     public  RequestSpecification CreateTaskSpec() {
