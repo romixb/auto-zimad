@@ -10,6 +10,9 @@ import javax.annotation.Generated;
 @Generated("com.robohorse.robopojogenerator")
 public class Due{
 
+	@JsonProperty("recurring")
+	private boolean recurring;
+
 	@JsonProperty("date")
 	private String date;
 

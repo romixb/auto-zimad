@@ -1,25 +1,22 @@
 package com.todoist.auto;
 
-import io.qameta.allure.restassured.AllureRestAssured;
-import io.restassured.RestAssured;
-import io.restassured.filter.log.RequestLoggingFilter;
-import io.restassured.filter.log.ResponseLoggingFilter;
+import com.github.javafaker.Faker;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
+@PropertySource(value = "classpath:application.properties")
 public class TestConfig {
 
-    @BeforeSuite
-    static void configureRestAssured() {
-        RestAssured.baseURI = "https://api.todoist.com/rest";
-        RestAssured.filters(new AllureRestAssured(), new RequestLoggingFilter(), new ResponseLoggingFilter());
+    @Bean
+    public RestAssuredSpecs getRestAssuredSpecs(){
+        return new RestAssuredSpecs();
     }
 
-    @AfterSuite
-    static void ResetEnvironment(){
-        //ResetEnvironment();
+    @Bean
+    public Faker getFaker(){
+        return new Faker();
     }
-
 }

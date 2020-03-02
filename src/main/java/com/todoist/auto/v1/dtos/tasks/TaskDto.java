@@ -12,22 +12,25 @@ import javax.annotation.Generated;
 public class TaskDto {
 
 	@JsonProperty("comment_count")
-	private int commentCount;
+	private long commentCount;
 
 	@JsonProperty("section_id")
-	private int sectionId;
+	private long sectionId;
 
 	@JsonProperty("due")
 	private Due due;
 
 	@JsonProperty("project_id")
-	private int projectId;
+	private long projectId;
 
 	@JsonProperty("completed")
 	private boolean completed;
 
+	@JsonProperty("parent")
+	private long parent;
+
 	@JsonProperty("id")
-	private int id;
+	private long id;
 
 	@JsonProperty("priority")
 	private int priority;
@@ -38,6 +41,12 @@ public class TaskDto {
 	@JsonProperty("url")
 	private String url;
 
+	@JsonProperty("label_ids")
+	private String labelId[];
+
+	@JsonProperty("created")
+	private String created;
+
 	@JsonProperty("order")
-	private int order;
+	private long order;
 }
