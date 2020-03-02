@@ -23,8 +23,8 @@ public class RestAssuredSpecs {
     @Value("${api.key}")    //todo: hide on test execution side
             String x;
 
-    public RequestSpecification CreateTaskSpec() {
-        return new RequestSpecBuilder().setConfig(CreateTaskConfig())
+    public RequestSpecification createTaskSpec() {
+        return new RequestSpecBuilder().setConfig(createTaskConfig())
                 .log(LogDetail.ALL)
                 .addFilter(new AllureRestAssured())
                 .setBasePath("/v1/tasks")
@@ -34,8 +34,33 @@ public class RestAssuredSpecs {
                 .build();
     }
 
-    public RestAssuredConfig CreateTaskConfig() {
+    public RequestSpecification getProjectSpec(){
+        return new RequestSpecBuilder().setConfig(createTaskConfig())
+                .log(LogDetail.ALL)
+                .addFilter(new AllureRestAssured())
+                .setBasePath("/v1/projects")
+                .addHeader("Authorization", x)
+                .addHeader("X-Request-Id", UUID.randomUUID().toString())
+                .build();
+    }
+
+
+    public RequestSpecification getSectionsSpec(){
+        return new RequestSpecBuilder().setConfig(createTaskConfig())
+                .log(LogDetail.ALL)
+                .addFilter(new AllureRestAssured())
+                .setBasePath("/v1/sections")
+                .addHeader("Authorization", x)
+                .addHeader("X-Request-Id", UUID.randomUUID().toString())
+                .build();
+    }
+
+
+
+    public RestAssuredConfig createTaskConfig() {
         return RestAssuredConfig.config().
                 encoderConfig(encoderConfig().appendDefaultContentCharsetToContentTypeIfUndefined(false));
     }
+
+
 }

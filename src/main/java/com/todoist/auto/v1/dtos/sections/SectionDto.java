@@ -11,14 +11,14 @@ import javax.annotation.Generated;
 public class SectionDto{
 
 	@JsonProperty("project_id")
-	private int projectId;
+	private long projectId;
 
 	@JsonProperty("name")
 	private String name;
 
 	@JsonProperty("id")
-	private int id;
+	private long id;
 
 	@JsonProperty("order")
-	private int order;
+	private long order;
 }

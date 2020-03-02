@@ -1,6 +1,6 @@
 package com.todoist.auto.v1.tasks.create;
 
-import com.todoist.auto.v1.dtos.DataProviders;
+import com.todoist.auto.DataProviders;
 import com.todoist.auto.v1.dtos.tasks.TaskDto;
 import com.todoist.auto.v1.dtos.tasks.request.TaskRequestDto;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,10 +11,10 @@ import static io.restassured.RestAssured.given;
 @SpringBootTest
 public class CreateTasksTests extends BaseTest {
 
-    @Test(dataProvider = "requestTaskCreate", dataProviderClass = DataProviders.class)
-    public void checkTaskAvailablityAndResponse(TaskRequestDto taskRequest) {
+    @Test(dataProvider = "requestTaskCreate", dataProviderClass = DataProviders.class, groups = "smoke")
+    public void checkTaskAvailabilityAndResponse(TaskRequestDto taskRequest) {
 
-        given().spec(restAssuredSpecs.CreateTaskSpec())
+        given().spec(restAssuredSpecs.createTaskSpec())
                 .with()
                 .body(taskRequest)
                 .post()
@@ -22,6 +22,8 @@ public class CreateTasksTests extends BaseTest {
                 .extract().as(TaskDto.class);
 
     }
+
+
 
 
 }

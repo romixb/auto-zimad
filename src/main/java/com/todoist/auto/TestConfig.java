@@ -1,6 +1,5 @@
 package com.todoist.auto;
 
-import com.github.javafaker.Faker;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -14,8 +13,4 @@ public class TestConfig {
         return new RestAssuredSpecs();
     }
 
-    @Bean
-    public Faker getFaker(){
-        return new Faker();
-    }
 }

@@ -1,4 +1,4 @@
-package com.todoist.auto.v1.dtos;
+package com.todoist.auto;
 
 import com.github.javafaker.Faker;
 import com.todoist.auto.v1.dtos.tasks.request.TaskRequestDto;

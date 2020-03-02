@@ -11,14 +11,23 @@ import javax.annotation.Generated;
 public class ProjectDto {
 
 	@JsonProperty("comment_count")
-	private int commentCount;
+	private long commentCount;
 
 	@JsonProperty("name")
 	private String name;
 
 	@JsonProperty("id")
-	private int id;
+	private long id;
 
 	@JsonProperty("order")
-	private int order;
+	private long order;
+
+	@JsonProperty("shared")
+	private boolean shared;
+
+	@JsonProperty("color")
+	private int color;
+
+	@JsonProperty("inbox_project")
+	private boolean inboxProject;
 }
