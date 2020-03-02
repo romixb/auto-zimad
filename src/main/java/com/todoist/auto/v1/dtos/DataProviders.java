@@ -11,11 +11,11 @@ public class DataProviders {
     @DataProvider(name = "requestTaskCreate")
     public Object[][] dataProvider() {
         return new Object[][] {
+                { createTaskRequestBuilder()},
+                { createTaskRequestBuilder()},
                 { createTaskRequestBuilder()}
         };
     }
-
-
 
     public TaskRequestDto createTaskRequestBuilder(){           //todo: add lang enum
             return TaskRequestDto.builder()
