@@ -22,4 +22,11 @@ public class TaskRequestDto {
 
 	@JsonProperty("due_string")
 	private String dueString;
+
+	@JsonProperty("project_id")
+	private long projectId;
+
+	@JsonProperty("section_id")
+	private long sectionId;
+
 }

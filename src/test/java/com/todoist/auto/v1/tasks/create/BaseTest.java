@@ -2,6 +2,7 @@ package com.todoist.auto.v1.tasks.create;
 
 import com.todoist.auto.AutoApplication;
 import com.todoist.auto.RestAssuredSpecs;
+import com.todoist.auto.Service;
 import io.restassured.RestAssured;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import lombok.extern.slf4j.Slf4j;
@@ -22,10 +23,9 @@ public class BaseTest extends AbstractTestNGSpringContextTests {
     @Autowired
     RestAssuredSpecs restAssuredSpecs;
 
-
     @BeforeSuite
     void SetupTestData() {
-        log.debug("Before Suite execution. Setup Test data");
+
     }
 
     @BeforeSuite
