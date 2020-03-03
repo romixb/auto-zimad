@@ -3,12 +3,6 @@
 <suite name="FullRunSuite" verbose="1">
 
     <test name="Test">
-        <groups>
-            <run>
-                <include name="Smoke">
-                </include>
-            </run>
-        </groups>
         <classes>
             <class name="com.todoist.auto.v1.tasks.create.CreateTasksTests"/>
         </classes>
