@@ -54,7 +54,7 @@ public class CreateTasksTests extends BaseTest {
                 .then().assertThat().statusCode(200)
                 .extract().as(TaskDto.class);
 
-        Assert.assertEquals(response.getId(), currentProjectId);
+        Assert.assertEquals(response.getProjectId(), currentProjectId);
     }
 
 

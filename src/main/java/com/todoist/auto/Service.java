@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import com.todoist.auto.v1.dtos.projects.ProjectDto;
 import com.todoist.auto.v1.dtos.sections.SectionDto;
 import com.todoist.auto.v1.dtos.tasks.TaskDto;
+import io.restassured.http.ContentType;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -30,6 +31,7 @@ public class Service {
     public ProjectDto createProject() {
         log.debug("Create project");
         return given().spec(restAssuredSpecs.getProjectSpec())
+                .contentType(ContentType.JSON)
                 .with()
                 .body(provider.createProjectBuilder())
                 .post()

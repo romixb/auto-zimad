@@ -22,17 +22,18 @@ public class DataProviders {
         };
     }
 
-    public ProjectDto createProjectBuilder(){           //todo: add lang enum
-        return ProjectDto.builder().name(faker.music().key()).build();
+    public ProjectDto createProjectBuilder(){                                //todo: add lang enum
+        return ProjectDto.builder().name(faker.artist().name()).build();
 
     }
-    public TaskRequestDto createTaskRequestBuilder(){           //todo: add lang enum
+    public TaskRequestDto createTaskRequestBuilder(){                          //todo: add lang enum
             return TaskRequestDto.builder()
-                    .content("Meeting with " + faker.artist().name())
+                    .content("Meeting with Roman")
                     .dueLang("en")
                     .dueString("end of month")                              //todo: method for dueString building
                     .priority(4)
                     .build();
+
     }
 
     public TaskRequestDto createTaskRequestWithProject(long projectId){
